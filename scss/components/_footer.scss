@@ -1,0 +1,79 @@
+.footer {
+    background-color: $dark_blue_color;
+    .f-container {
+        h4 {
+            @include title_style($title_4_size);
+            color: #fff;
+        }
+        a {
+            color: $light_blue_color;
+        }
+        span {
+            color: #fff;
+        }
+        @include content_width(1300px);
+        @include base_flex(row, top, space-between);
+        padding: 95px 0;
+    }
+    .social {
+        margin-top: 24px;
+    }
+    .f-social {
+        background-color: transparent;
+        border: 1px solid $yellow_color;
+        fill: #fff;
+        &:hover {
+            fill: $yellow_color;
+        }
+    }
+    &__list {
+        .explore,
+        .utility {
+            margin-top: 24px;
+        }
+        .utility__link,
+        .explore__link {
+            @include base_flex(row, center, flex-start);
+            &:hover {
+                transform: scale(1.2);
+                transition: all 1s;
+            }
+            .f-dot {
+                margin: 20px;
+                @include dot_empty(2px, 1.5px);
+                position: relative;
+                &::before {
+                    box-sizing: border-box;
+                    position: absolute;
+                    content: "";
+                    @include dot_empty(2px, 1.5px);
+                    top: -1.5px;
+                    right: 10px;
+                }
+                &::after {
+                    position: absolute;
+                    box-sizing: border-box;
+                    content: "";
+                    @include dot_empty(2px, 1.5px);
+                    top: -1.5px;
+                    left: 10px;
+                }
+            }
+        }
+        .f-contacts {
+            &__item {
+                margin-top: 27px;
+            }
+        }
+    }
+}
+
+.copyright {
+    color: $light_blue_color;
+    text-align: center;
+    font-size: 17px;
+    padding: 25px 0;
+    &-link {
+        color: #fff;
+    }
+}

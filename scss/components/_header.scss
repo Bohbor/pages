@@ -1,0 +1,135 @@
+.header {
+    background-color: $dark_blue_color;
+    &__wrapper {
+        @include content_width(1300px);
+    }
+}
+.nav {
+    @include base_flex(row, center, space-between);
+    padding: 20px 0 21px 0;
+    .social {
+        margin-left: 30px;
+    }
+}
+.social {
+    //база одна а стили в нав и фут разые
+    @include base_flex(row, center, flex-start);
+    flex-grow: 1;
+    &__link {
+        @include base_flex(row, center, center);
+        fill: $black_color;
+        width: 45px;
+        height: 45px;
+        padding: 16px;
+        margin: 0 5px;
+        background-color: $white_color;
+        transition: all 0.3s ease-in-out;
+        &:hover {
+            fill: $white_color;
+            background-color: $yellow_color;
+            transform: scale(1.2);
+        }
+    }
+}
+.menu {
+    @include base_flex(row, center, space-between);
+    margin: 0 42px;
+    &__item {
+        margin-left: 50px;
+        &:last-of-type {
+            margin-left: 64px;
+        }
+    }
+    &__link {
+        color: $white_color;
+        font-size: 17px;
+        &:hover {
+            color: $yellow_color;
+            transition: 0.5s;
+        }
+    }
+}
+.basket {
+    margin-right: 51px;
+}
+.basket_ico {
+    width: 17px;
+    height: 17px;
+}
+.order-today-btn {
+    @include btn_style($yellow_color, transparent, $dark_blue_color);
+}
+.banner {
+    @include base_flex(row, center, space-between);
+    color: $white_color;
+    padding: 100px 0;
+    &__text {
+        margin: 0 24px;
+        p {
+            color: $light_blue_color;
+        }
+    }
+    &__sub-title {
+        font-size: 21px;
+        letter-spacing: 1.2px;
+        line-height: 36px;
+        margin-left: 49px;
+        position: relative;
+        &::before {
+            @include pseudo-line(35px, 2px);
+            top: calc(50% - 1px);
+            left: -49px;
+        }
+    }
+    .main-title {
+        margin-top: 10px;
+        font-family: $title_font;
+        font-size: $title_1_size;
+        letter-spacing: 1.3px;
+        font-weight: 400;
+        line-height: 78px;
+    }
+    .main-text {
+        margin-top: 23px;
+        font-size: 18px;
+        line-height: 28.5px;
+    }
+    &__links {
+        margin-top: 42px;
+        .demo-link {
+            margin: 0 51px;
+            font-family: $title_font;
+            color: $white_color;
+            border-bottom: 1px solid $white_color;
+        }
+    }
+    &__img {
+        padding: 0 21px;
+        img {
+            display: block;
+            box-shadow: -1px 2px 11px #00000033;
+        }
+    }
+    .book-stats {
+        @include base_flex(row, flex-start, flex-start);
+        margin-top: 47px;
+        &__item {
+            margin-right: 65px;
+            .stat-circle {
+                @include dot-full(16px);
+            }
+        }
+        &__prop {
+            @include title_style($title_4_size);
+            color: $white_color;
+            margin-left: 5px;
+        }
+        &__val {
+            margin-left: 26px;
+            margin-top: 12px;
+            font-size: 17px;
+            line-height: 27px;
+        }
+    }
+}
+

@@ -1,0 +1,76 @@
+@mixin base_flex($direction, $align, $justify) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin content_width($width) {
+    max-width: calc($width + 40px);
+    width: 100%;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+@mixin title_style($size) {
+    color: $dark_blue_color;
+    font-size: $size;
+    font-family: $title_font;
+}
+@mixin btn_style($bg_color, $b-color, $f-color) {
+    background-color: $bg_color;
+    border: 2px solid $b-color;
+    font-family: $title_font;
+    font-size: $main_fonts_size;
+    letter-spacing: 0.6px;
+    color: $f-color;
+    cursor: pointer;
+    padding: 17px 52px 19px 52px;
+    &:hover {
+        transform: scale(1.2);
+        transition: all 0.9s ease-in-out;
+    }
+}
+//---------------dots-----------------------------
+@mixin dot_empty($r-size, $b-size) {
+    display: inline-block;
+    width: $r-size;
+    height: $r-size;
+    border: $b-size solid $yellow_color;
+    border-radius: 50%;
+}
+@mixin dot_semi($r-size, $b-size) {
+    display: inline-block;
+    width: $r-size;
+    height: $r-size;
+    border: $b-size solid $yellow_color;
+    border-radius: 50%;
+    position: relative;
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 100%;
+        border-radius: calc($r-size * 1.5) 0 0 calc($r-size * 1.5);
+        background-color: $yellow_color;
+    }
+
+}
+
+@mixin dot-full($r-size) {
+    display: inline-block;
+    width: $r-size;
+    height: $r-size;
+    border-radius: 50%;
+    background-color: $yellow_color;
+}
+//---------------dots end-----------------------------
+//--------------- pseudo-line -------------------------------
+@mixin pseudo-line ($width, $height){
+    content: "";
+    position: absolute;
+    width: $width;
+    height: $height;
+    background-color: $yellow_color;
+}

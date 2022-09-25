@@ -1,0 +1,81 @@
+.about-author {
+    background-color: #f5f8fc;
+    padding-top: 1.8%;
+    .about-wrapper {
+        @include content_width(1300px);
+        @include base_flex(row, center, space-between);
+    }
+    .author {
+        &__photo {
+            margin: 11% 0;
+            border: 10px solid #ffca42;
+            img {
+                box-shadow: 0px 0px 20px #1b37644d;
+                display: block;
+                position: relative;
+                top: -40px;
+                right: 40px;
+            }
+        }
+        &__info {
+            width: 46.5%;
+            h2 {
+                @include title_style($title_2_size);
+                line-height: 50.4px;
+                position: relative;
+                margin-bottom: 59px;
+                &::before {
+                    @include pseudo-line(50px, 3px);
+                    bottom: -26px;
+                    left: 0px;
+                }
+            }
+            p {
+                color: $light_grey_color;
+                line-height: 34.2px;
+            }
+        }
+        .stats {
+            margin-top: 33px;
+            margin-left: 12px;
+            background-color: $yellow_color;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1px;
+            max-width: 605px;
+            &__container {
+                background-color: #f5f8fc;
+                @include base_flex(column, flex-start, flex-start);
+            }
+            &__item {
+                h3 {
+                    @include title_style(54px);
+                    line-height: 77px;
+                }
+                p {
+                    font-size: 17px;
+                    line-height: 21.6px;
+                }
+            }
+        }
+        &__contact {
+            background-color: $dark_blue_color;
+            max-width: 484px;
+            margin-top: 54px;
+            padding: 15px 20px 20px 16px;
+            @include base_flex(row, center, flex-start);
+            .qr_code_img {
+                img {
+                    display: block;
+                }
+            }
+            .contact-info {
+                margin-left: 40px;
+                p:first-child {
+                    @include title_style(22px);
+                    color: $yellow_color;
+                }
+            }
+        }
+    }
+}

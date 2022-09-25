@@ -1,0 +1,78 @@
+.book-content {
+    background-color: #f4f8ff;
+    padding: 6.3% 0;
+    &__wrapper {
+        @include content_width(1300px);
+        @include base_flex(column, center, flex-start);
+        h2 {
+            @include title_style($title_2_size);
+            text-align: center;
+            position: relative;
+            &::after {
+                @include pseudo-line(50px, 3px);
+                left: calc(50% - 25px);
+                bottom: -24px;
+            }
+        }
+        .chapters {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px 40px;
+            margin-top: 7.2%;
+            &__item {
+                background-color: #fff;
+                padding: 42px 40px;
+            }
+            &__title {
+                @include title_style($title_4_size);
+            }
+            &__disc {
+                color: $light_grey_color;
+                margin-top: 21px;
+                line-height: 32.3px;
+            }
+            &__stats {
+                @include base_flex(row, center, flex-start);
+                font-size: 17px;
+                color: $light_grey_color;
+                margin-top: 12px;
+                &-pages,
+                &-length {
+                    position: relative;
+                    margin: 0 45px 0 16px;
+                }
+                &-pages::before,
+                &-length::before {
+                    @include dot-full(16px);
+                    position: absolute;
+                    content: "";
+                    top: calc(50% - 8px);
+                    left: -15px;
+                }
+                &-pages span:first-of-type,
+                &-length span:first-of-type {
+                    @include title_style(22px);
+                    margin: 0 10px;
+                }
+            }
+        }
+        .trail-btn {
+            margin-top: 6%;
+            padding: 24px 92px;
+            background-color: $yellow_color;
+            border: none;
+            @include title_style(19px);
+            letter-spacing: 1.57px;
+        }
+        .short-disc {
+            margin-top: 34px;
+            text-align: center;
+            color: $light_grey_color;
+            line-height: 28.5px;
+            span {
+                color: $dark_blue_color;
+            }
+        }
+    }
+}

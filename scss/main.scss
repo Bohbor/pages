@@ -1,4 +1,5 @@
-@import 'vars';
+@import "vars";
+@import "mixins";
 
 * {
     margin: 0;
@@ -6,6 +7,96 @@
     box-sizing: border-box;
 }
 
-.header {
-    background-color: #000;
+ul,
+ol,
+li {
+    list-style: none;
 }
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-weight: 400;
+    font-family: $title_font;
+}
+a {
+    color: $black_color;
+    text-decoration: none;
+}
+
+svg {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: $main_font;
+    font-size: $main_fonts_size;
+}
+.circle {
+    @include dot_empty(16px, 1px);
+}
+.circle-full {
+    @include dot-full(16px);
+}
+.circle-half {
+    @include dot_semi(16px, 1px);
+}
+.btn_to_top {
+    display: none;
+    position: fixed;
+    z-index: 29;
+    bottom: 5%;
+    right: 5%;
+    width: 50px;
+    height: 50px;
+    border: none;
+    font-size: 0;
+    & img {
+        border-radius: 50%;
+        background-color: #6b6b6b5e;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image: url(../img/arrow_to_top.png);
+        animation-name: zoom;
+        animation-duration: 0.6s;
+        @keyframes zoom {
+            from {
+                transform: scale(0);
+            }
+            to {
+                transform: scale(1);
+            }
+        }
+
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+}
+// header + banner
+@import "./components/header";
+
+// main 
+@import "./components/_author-books.scss";
+
+@import "./components/about_author";
+
+@import "./components/awards";
+
+@import "./components/promo";
+
+@import "./components/you_learn";
+
+@import "./components/book_content";
+
+@import "./components/review";
+
+@import "./components/slider";
+
+@import "./components/subscribe-form";
+
+// footer
+@import "./components/footer";
